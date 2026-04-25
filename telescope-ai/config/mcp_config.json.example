@@ -1,0 +1,10 @@
+{
+    "servers": {
+        "telescope-ai": {
+            "type": "stdio",
+            "command": "python",
+            "args": ["-m", "fastmcp", "run", "/path/to/telescope-ai/mcp_server/server.py:mcp"],
+            "env": {}
+        }
+    }
+}

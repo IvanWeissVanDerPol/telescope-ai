@@ -1,0 +1,30 @@
+# Telescope AI Configuration
+# Copy to ~/.config/telescope-ai/config.yaml and edit
+
+mount_type: simulator          # nexstar or simulator
+serial_port: /dev/ttyUSB0     # COM1 on Windows
+serial_baud: 9600
+
+# Your observatory location (default: Asunción, Paraguay)
+latitude: -25.2637
+longitude: -57.5759
+elevation_m: 100
+timezone: America/Asuncion
+
+# Camera
+camera_type: simulator         # simulator, asi, dslr, phone
+
+# Weather (optional - get free key at https://openweathermap.org/api)
+weather_api_key: ""
+
+# Plate solving
+astap_path: astap              # Path to ASTAP binary
+astrometry_url: http://localhost:8080
+
+# Satellite tracking
+tle_url: https://celestrak.org/NORAD/elements/stations.txt
+satellite_update_interval_s: 1.5
+
+# MCP server
+mcp_host: 127.0.0.1
+mcp_port: 8080

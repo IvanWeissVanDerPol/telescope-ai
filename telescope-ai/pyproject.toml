@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telescope-ai"
+version = "0.1.0"
+description = "AI-powered telescope control for Celestron NexStar mounts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["telescope", "astronomy", "ai", "nexstar", "celestron", "mcp"]
+authors = [{name = "Telescope AI"}]
+
+dependencies = [
+    "pyyaml>=6.0",
+    "pyserial>=3.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+    "fastmcp>=0.1.0",
+]
+satellite = [
+    "skyfield>=1.45",
+]
+camera = [
+    "zwoasi>=0.6",
+    "numpy>=1.24",
+]
+weather = [
+    "requests>=2.28",
+]
+platesolve = [
+    "requests>=2.28",
+    "pillow>=9.0",
+    "numpy>=1.24",
+]
+all = [
+    "telescope-ai[satellite,camera,weather,platesolve,dev]",
+]
+
+[project.scripts]
+telescope-ai = "telescope_ai.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["telescope_ai*", "mcp_server*"]
